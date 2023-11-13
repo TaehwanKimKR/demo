@@ -5,18 +5,16 @@ import org.python.core.PyFunction;
 import org.python.core.PyInteger;
 import org.python.core.PyObject;
 import org.python.util.PythonInterpreter;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/test")
 public class PythonController {
     private static PythonInterpreter interpreter;
 
-    @GetMapping("/pytest")
-    public String pytest(){
+    @PostMapping("/pytest")
+    public String pytest(@RequestBody String termJson){
+        RestTemplate restTemplate = new RestTemplate();
+
         interpreter = new PythonInterpreter();
         interpreter.execfile("src/main/pyt/test.py");
         interpreter.exec("print(testFunc(5, 10))");

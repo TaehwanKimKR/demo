@@ -9,7 +9,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import OneHotEncoder
 
 # 데이터 불러오기
-drink_df = pd.read_csv(r'C:\Users\RansePC\Desktop\23-2학기\gptdemo\demo\src\main\pyt\data.csv')
+drink_df = pd.read_csv(r'경로')
 
 # 결측치를 해당 열의 평균값으로 대체
 drink_df.fillna(drink_df.mean(numeric_only=True), inplace=True)
