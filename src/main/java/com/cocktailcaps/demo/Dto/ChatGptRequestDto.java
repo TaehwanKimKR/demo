@@ -10,7 +10,6 @@ import java.io.Serializable;
 @Getter
 @NoArgsConstructor
 public class ChatGptRequestDto implements Serializable {
-
     private String model;
     private String prompt;
     @JsonProperty("max_tokens")
@@ -18,7 +17,6 @@ public class ChatGptRequestDto implements Serializable {
     private Double temperature;
     @JsonProperty("top_p")
     private Double topP;
-
     @Builder
     public ChatGptRequestDto(String model, String prompt,
                              Integer maxTokens, Double temperature,
