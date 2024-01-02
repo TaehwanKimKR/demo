@@ -41,7 +41,8 @@ public class ChatGptService {
                                 requestDto.getQuestion(),
                                 ChatGptConfig.MAX_TOKEN,
                                 ChatGptConfig.TEMPERATURE,
-                                ChatGptConfig.TOP_P
+                                ChatGptConfig.TOP_P,
+                                ChatGptConfig.USER_ROLE
                         )
                 )
         );
